@@ -23,6 +23,8 @@ If nothing is wrong, the key will be dumped properly and saved as a c language f
 Currently only known keys of F00D are dumped.
 As a result, kernel/user keys are not currently dumped, but will be supported in the future.
 
+**If you dump with devkit you will need devkit PUP. The same is true for testkit.**
+
 # Credits
 
 Many stuff is from [reF00D](<https://github.com/dots-tb/reF00D>).
