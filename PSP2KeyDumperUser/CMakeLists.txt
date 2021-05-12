@@ -39,6 +39,7 @@ add_executable(${PROJECT_NAME}
   src/key_act.c
   src/key_aimgr.c
   src/key_encdec_w_portability.c
+  src/key_gcauthmgr.c
   src/key_update_service.c
   src/key_qaf.c
   src/key_pm.c

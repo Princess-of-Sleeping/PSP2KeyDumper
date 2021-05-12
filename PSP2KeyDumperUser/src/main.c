@@ -293,9 +293,9 @@ int dump_vita_keys(SceSlb2Context *pSlb2Ctx){
 		extract_pm_360_key();
 		extract_aimgr_360_key();
 		extract_encdec_w_portability_360_key();
+		extract_gcauthmgr_360_key();
 
 		// Many unknown keys
-		// gcauthmgr_sm
 		// rmauth_sm
 		// mgkm_sm
 		// utoken_sm

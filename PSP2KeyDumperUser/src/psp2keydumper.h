@@ -25,5 +25,6 @@ int extract_qaf_360_key(void);
 int extract_pm_360_key(void);
 int extract_aimgr_360_key(void);
 int extract_encdec_w_portability_360_key(void);
+int extract_gcauthmgr_360_key(void);
 
 #endif /* _PSP2KEYDUMPER_H_ */
