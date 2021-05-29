@@ -116,7 +116,7 @@ int keySave(const char *path, const char *name, const void *key, SceSize size){
 			size -= 1;
 		}
 
-		LogWrite("\n}\n\n");
+		LogWrite("\n};\n\n");
 	}
 
 	LogClose();
