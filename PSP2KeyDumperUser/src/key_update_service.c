@@ -54,22 +54,27 @@ int extract_update_service_360_key(void){
 
 	// 0x8A80 : unknown keys
 
-	// 0x7D98 - 0x8017 : unknown keys
+	char key_name[0x40];
+
+	for(int i=0;i<0xA;i++){
+		snprintf(key_name, sizeof(key_name), "us_hmac_key%d", 10 - i);
+		keyRegister("update_service", key_name, update_service_bin + 0x7D98 + (0x40 * (10 - i - 1)), 0x40);
+	}
 
 	// 0x7D54 : syscon keys x1
 	// 0x7CDC : syscon keys x4
 
 	// 0x79F8 - 0x7C87 : unknown keys
 
-	keyRegister("update_service", "spkg_wm_iv",  update_service_bin + 0x79E8, 0x10);
-	keyRegister("update_service", "spkg_wm_key", update_service_bin + 0x79D8, 0x10);
-	keyRegister("update_service", "spkg_as_iv",  update_service_bin + 0x7748, 0x10);
-	keyRegister("update_service", "spkg_as_key", update_service_bin + 0x7738, 0x10);
+	keyRegister("update_service", "pup_wm_iv",  update_service_bin + 0x79E8, 0x10);
+	keyRegister("update_service", "pup_wm_key", update_service_bin + 0x79D8, 0x10);
+	keyRegister("update_service", "pup_as_iv",  update_service_bin + 0x7748, 0x10);
+	keyRegister("update_service", "pup_as_key", update_service_bin + 0x7738, 0x10);
 
-	keyRegister("update_service", "spkg_wm_rsa_e", update_service_bin + 0x7730, 0x4);
-	keyRegister("update_service", "spkg_wm_rsa_n", update_service_bin + 0x762C, 0x100);
-	keyRegister("update_service", "spkg_as_rsa_e", update_service_bin + 0x7604, 0x4);
-	keyRegister("update_service", "spkg_as_rsa_n", update_service_bin + 0x7500, 0x100);
+	keyRegister("update_service", "pup_wm_rsa_e", update_service_bin + 0x7730, 0x4);
+	keyRegister("update_service", "pup_wm_rsa_n", update_service_bin + 0x762C, 0x100);
+	keyRegister("update_service", "pup_as_rsa_e", update_service_bin + 0x7604, 0x4);
+	keyRegister("update_service", "pup_as_rsa_n", update_service_bin + 0x7500, 0x100);
 
 	return 0;
 }
