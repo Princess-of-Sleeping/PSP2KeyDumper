@@ -7,7 +7,8 @@
 #define _PUP_H_
 
 typedef struct ScePupHeader { // size is 0x80
-	char magic[8];
+	char magic[7];
+	char unk_0x07;
 	uint32_t package_version;
 	uint32_t unk_0x0C;
 
@@ -19,7 +20,8 @@ typedef struct ScePupHeader { // size is 0x80
 	uint64_t header_length;
 	uint64_t package_length;
 
-	uint64_t unk_0x30;	// 2 ?
+	uint32_t header_hash_version; // Must be 2
+	uint32_t hmac_key_index;
 	uint32_t unk_0x38;
 	uint32_t pup_type;
 
