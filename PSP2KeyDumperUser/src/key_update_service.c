@@ -57,7 +57,7 @@ int extract_update_service_360_key(void){
 	char key_name[0x40];
 
 	for(int i=0;i<0xA;i++){
-		snprintf(key_name, sizeof(key_name), "us_hmac_key%d", 10 - i);
+		sceClibSnprintf(key_name, sizeof(key_name), "us_hmac_key%d", 10 - i);
 		keyRegister("update_service", key_name, update_service_bin + 0x7D98 + (0x40 * (10 - i - 1)), 0x40);
 	}
 
